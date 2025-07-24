@@ -1,6 +1,6 @@
 <h1 align="center">
  <br>
-  <a href="https://github.com/sonujana26"><img src="https://cdn.discordapp.com/avatars/1144179659735572640/cfbc935b49259525bfc1348a0582c6b4.png?size=1024.png?size=1024?size=128"></a>
+  <a href="https://github.com/sonujana26"><img src="https://cdn.discordapp.com/avatars/1144179659735572640/7af45040da87480e78a2424691753f4d.png?size=128"></a>
   <br>
   Olympus the Ultimate Discord Bot
   <br>
@@ -23,9 +23,6 @@ I've decided to make this repo public again!!
     <img src="https://img.shields.io/badge/aiosqlite-%23003B57.svg?&style=for-the-badge&logo=sqlite&logoColor=white" alt="aiosqlite">
   </a>
 
-  <a href="https://github.com/peterhanania/Pogy/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-Apache%202-blue?&style=for-the-badge" alt="license">
-  </a>
 
 </div>
 
@@ -107,7 +104,13 @@ Olympus is a powerful, easy-to-use Discord bot designed to enhance your server e
    Unfortunately, there is no centralized setup for emojis & embed colors. You need to manually update emojis in all files where they are used.
 
 ## License
-Released under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) license.
+This source code is protected under a custom Olympus License.
+
+> 🚫 No commercial use  
+> 🚫 No redistribution  
+> 🚫 No modification allowed without a paid license  
+
+To obtain a license or permission, [join our support server](https://discord.gg/odx).
 
 ## Donate
 Coming Soon
