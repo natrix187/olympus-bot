@@ -168,3 +168,8 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name="Bot cree est disagner pas Natrix"))
+
