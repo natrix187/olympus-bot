@@ -59,7 +59,7 @@ class Olympus(commands.AutoShardedBot):
         await self.change_presence(status=discord.Status.do_not_disturb,
                                    activity=discord.Activity(
                                        type=discord.ActivityType.playing,
-                                       name='Bot cree par Natrix'))
+                                       name='Created by Natrix'))
 
     async def send_raw(self, channel_id: int, content: str,
                        **kwargs) -> typing.Optional[discord.Message]:
