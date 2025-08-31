@@ -103,7 +103,7 @@ class HelpCommand(commands.HelpCommand):
     embed = discord.Embed(
       title="", color=0x000000)
 
-    embed.add_field(name="📜 __**General Info:**__", value= f"🔴 Server Prefix:  **{prefix}** \n🔴 Total Commands: **{len(set(self.context.bot.walk_commands()))}**\n🔴 Total Slash Commands: **{slash}**\n🔴 **[Get Olympus](https://discord.com/oauth2/authorize?client_id=1384295514979434586)** | **[Support](https://discord.gg/KxrRMJ4gWh)**\n\n❓ __**How do you use me?**__\n>>> `{prefix}help <command/module>` to get more info regarding that command/module\nFor example: `{prefix}help antinuke`\n\n")
+    embed.add_field(name="📜 __**General Info:**__", value= f"🔴 Server Prefix:  **{prefix}** \n🔴 Total Commands: **{len(set(self.context.bot.walk_commands()))}**\n🔴 Total Slash Commands: **{slash}**\n🔴 **[Get Troton](https://discord.com/oauth2/authorize?client_id=1384295514979434586)** | **[Support](https://discord.gg/KxrRMJ4gWh)**\n\n❓ __**How do you use me?**__\n>>> `{prefix}help <command/module>` to get more info regarding that command/module\nFor example: `{prefix}help antinuke`\n\n")
 
     embed.add_field(name="⭐ __**My Features**__", value=">>> **50+ Systems, including:**\n 🛡️ Security\n 🚨 Automoderation\n 🔧 Utility\n 🎵 Music\n 🛠️ Moderation\n 🧩 Customrole\n 🎉 Giveaway\n 🎙️ Voice\n 🎮 Games\n 👋 Welcomer\n 🪩 Autoreact & responder\n 📋 Autorole & Invc\n 🎭 Fun & AI Image Gen\n   And much more!...")
     embed.add_field(name="➡️ __**How to get help?**__", value=">>> ♨️ Use the Buttons, to swap the Pages\n♨️ Use the Menu to select all Help Pages, you want to display\n♨️ For any queries/help Contact the **[Support Team](https://discord.gg/KxrRMJ4gWh).**")
