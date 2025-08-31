@@ -55,6 +55,9 @@ async def on_ready():
     print(f"Logged in as: {client.user}")
     print(f"Connected to: {len(client.guilds)} guilds")
     print(f"Connected to: {len(client.users)} users")
+   
+    client.change_presence(activity=discord.Game(name="Bot créé et designé par Natrix"))
+    
     try:
         synced = await client.tree.sync()
         all_commands = list(client.commands)
