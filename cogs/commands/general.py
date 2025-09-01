@@ -283,7 +283,7 @@ class General(commands.Cog):
                 if g.member_count != None)
     guilds = len(self.bot.guilds)
     embed = discord.Embed(
-      title=f"**<:olympus_users:1226064812157571163> Olympus Users**",
+      title=f"** 💃 Users**",
       description=f"❯ Total of __**{users}**__ Users in **{guilds}** Guilds",
       color=self.color)
     await ctx.send(embed=embed)
@@ -316,7 +316,7 @@ class General(commands.Cog):
     await message1.delete()
     embed = discord.Embed(
       title=f"{self.bot.user.name}",
-      description=f"**<a:olympus_WarnFlash:1272569018183843874> Successfully Wizzed {ctx.guild.name}**",
+      description=f"**🗑️ Successfully Wizzed {ctx.guild.name}**",
       color=self.color,
       timestamp=ctx.message.created_at)
     embed.set_footer(
@@ -433,9 +433,9 @@ class General(commands.Cog):
   @ignore_check()
   @commands.cooldown(1, 3, commands.BucketType.user)
   async def invite(self, ctx: commands.Context):
-    embed = discord.Embed(title="Olympus Invite & Support!",
+    embed = discord.Embed(title="Kyra✨ Invite & Support!",
       description=
-      f"> <:created:1272499720153202688> **[Olympus - Invite Bot](https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot)**\n> <:created:1272499720153202688> **[Olympus - Support](https://discord.gg/odx)**",
+      f"> ✈️ **[Kyra✨ - Invite Bot](https://discord.com/oauth2/authorize?client_id=1411946303172120651)**\n> 🛩️ **[Kyra✨ - Support](https://discord.gg/X9NDdMf3xf)**",
       color=0x000000)
 
     embed.set_thumbnail(url="https://cdn.discordapp.com/emojis/1267667804048588992.png")
@@ -445,11 +445,11 @@ class General(commands.Cog):
       label='Invite',
       style=discord.ButtonStyle.link,
       url=
-      'https://discord.com/oauth2/authorize?client_id=1144179659735572640&permissions=2113268958&scope=bot'
+     ' https://discord.com/oauth2/authorize?client_id=1411946303172120651'
     )
     support = Button(label='Support',
                     style=discord.ButtonStyle.link,
-                    url=f'https://discord.gg/odx')
+                    url=f'https://discord.gg/X9NDdMf3xf')
     vote = Button(label='Vote',
                       style=discord.ButtonStyle.link,
                       url='https://top.gg/bot/1144179659735572640/vote')
