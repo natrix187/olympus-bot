@@ -382,24 +382,43 @@ class Owner(commands.Cog):
                     json.dump(data, f, indent=4)
 
 
+from discord.ext import commands
+import discord
+from utils.config import OWNER_IDS
+
+def is_custom_owner():
+    async def predicate(ctx):
+        return ctx.author.id in OWNER_IDS
+    return commands.check(predicate)
+
+class Owner(commands.Cog):
+    def __init__(self, client):
+        self.client = client
+
     @commands.command(name="owners")
-    @commands.is_owner()
+    @is_custom_owner()  # ✅ Notre vérification perso
     async def own_list(self, ctx):
-        nplist = OWNER_IDS
-        npl = ([await self.client.fetch_user(nplu) for nplu in nplist])
-        npl = sorted(npl, key=lambda nop: nop.created_at)
-        entries = [
-            f"`#{no}` | [{mem}](https://discord.com/users/{mem.id}) (ID: {mem.id})"
-            for no, mem in enumerate(npl, start=1)
-        ]
-        embeds = DescriptionEmbedPaginator(
-            entries=entries,
-            title=f"Olympus Owners [{len(nplist)}]",
-            description="",
-            per_page=10,
-            color=0x000000).get_pages()
-        paginator = Paginator(ctx, embeds)
-        await paginator.paginate()
+        if not OWNER_IDS:
+            return await ctx.send("❌ Aucun owner trouvé dans la configuration.")
+
+        owners_text = []
+        for owner_id in OWNER_IDS:
+            try:
+                user = await self.client.fetch_user(owner_id)
+                owners_text.append(f"• {user} (`{owner_id}`)")
+            except:
+                owners_text.append(f"• Unknown User (`{owner_id}`)")
+
+        embed = discord.Embed(
+            title=f"👑 Kyra✨ Owners [{len(OWNER_IDS)}]",
+            description="\n".join(owners_text),
+            color=0x000000
+        )
+        await ctx.send(embed=embed)
+
+async def setup(bot):
+    await bot.add_cog(Owner(bot))
+    print("✅ Owner Cog loaded")
 
 
 
