@@ -89,7 +89,7 @@ class HelpCommand(commands.HelpCommand):
       return
 
     
-    embed = discord.Embed(description="<a:RedLoading:1246777916621197424> **Loading Help module...**", color=color)
+    embed = discord.Embed(description="🪫 **Loading Help module...**", color=color)
     ok = await self.context.reply(embed=embed)          
     data = await getConfig(self.context.guild.id)
     prefix = data["prefix"]
