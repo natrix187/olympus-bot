@@ -383,25 +383,23 @@ class Owner(commands.Cog):
 
 
  @commands.command(name="owners")
-    @is_custom_owner()
+    @commands.is_owner()
     async def own_list(self, ctx):
-        if not OWNER_IDS:
-            return await ctx.send("❌ Aucun owner trouvé dans la configuration.")
-
-        owners_text = []
-        for owner_id in OWNER_IDS:
-            try:
-                user = await self.client.fetch_user(owner_id)
-                owners_text.append(f"• {user} (`{owner_id}`)")
-            except:
-                owners_text.append(f"• Unknown User (`{owner_id}`)")
-
-        embed = discord.Embed(
-            title=f"👑 Kyra✨ Owners [{len(OWNER_IDS)}]",
-            description="\n".join(owners_text),
-            color=0x000000
-        )
-        await ctx.send(embed=embed)
+        nplist = OWNER_IDS
+        npl = ([await self.client.fetch_user(nplu) for nplu in nplist])
+        npl = sorted(npl, key=lambda nop: nop.created_at)
+        entries = [
+            f"`#{no}` | [{mem}](https://discord.com/users/{mem.id}) (ID: {mem.id})"
+            for no, mem in enumerate(npl, start=1)
+        ]
+        embeds = DescriptionEmbedPaginator(
+            entries=entries,
+            title=f"Kyra✨ Owners [{len(nplist)}]",
+            description="",
+            per_page=10,
+            color=0x000000).get_pages()
+        paginator = Paginator(ctx, embeds)
+        await paginator.paginate()
 
 
 
