@@ -382,21 +382,8 @@ class Owner(commands.Cog):
                     json.dump(data, f, indent=4)
 
 
-from discord.ext import commands
-import discord
-from utils.config import OWNER_IDS
-
-def is_custom_owner():
-    async def predicate(ctx):
-        return ctx.author.id in OWNER_IDS
-    return commands.check(predicate)
-
-class Owner(commands.Cog):
-    def __init__(self, client):
-        self.client = client
-
-    @commands.command(name="owners")
-    @is_custom_owner()  # ✅ Notre vérification perso
+ @commands.command(name="owners")
+    @is_custom_owner()
     async def own_list(self, ctx):
         if not OWNER_IDS:
             return await ctx.send("❌ Aucun owner trouvé dans la configuration.")
@@ -415,11 +402,6 @@ class Owner(commands.Cog):
             color=0x000000
         )
         await ctx.send(embed=embed)
-
-async def setup(bot):
-    await bot.add_cog(Owner(bot))
-    print("✅ Owner Cog loaded")
-
 
 
 
