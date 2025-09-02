@@ -382,20 +382,20 @@ class Owner(commands.Cog):
                     json.dump(data, f, indent=4)
 
 
- @commands.command(name="owners")
-    @commands.is_owner()
-    async def own_list(self, ctx):
-        nplist = OWNER_IDS
-        npl = ([await self.client.fetch_user(nplu) for nplu in nplist])
-        npl = sorted(npl, key=lambda nop: nop.created_at)
-        entries = [
+@commands.command(name="owners")
+@commands.is_owner()
+async def own_list(self, ctx):
+    nplist = OWNER_IDS
+    npl = ([await self.client.fetch_user(nplu) for nplu in nplist])
+    npl = sorted(npl, key=lambda nop: nop.created_at)
+    entries = [
             f"`#{no}` | [{mem}](https://discord.com/users/{mem.id}) (ID: {mem.id})"
             for no, mem in enumerate(npl, start=1)
         ]
         embeds = DescriptionEmbedPaginator(
             entries=entries,
             title=f"Kyra✨ Owners [{len(nplist)}]",
-            description="",
+            description="it's best develloper",
             per_page=10,
             color=0x000000).get_pages()
         paginator = Paginator(ctx, embeds)
@@ -404,6 +404,7 @@ class Owner(commands.Cog):
 
 
 
+    
     @commands.command()
     @commands.is_owner()
     async def dm(self, ctx, user: discord.User, *, message: str):
